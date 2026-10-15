@@ -84,10 +84,10 @@
     h1 { margin: 18px 0 8px; font-size: clamp(27px, 6.8vw, 44px); line-height: 1.28; letter-spacing: -.04em; }
     .hero-intro { margin: 0; color: rgba(255,255,255,.82); font-size: 14px; line-height: 1.75; }
     .hero-intro strong { color: var(--white); }
-    .event-facts { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 17px; }
-    .event-fact { padding: 11px 12px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(255,255,255,.07); }
-    .event-fact-label { color: #9ce5d4; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
-    .event-fact-value { margin-top: 4px; color: var(--white); font-size: 13px; font-weight: 700; line-height: 1.45; }
+    .event-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 17px; }
+    .event-fact { min-width: 0; padding: 9px 5px; border: 1px solid rgba(255,255,255,.14); border-radius: 11px; background: rgba(255,255,255,.07); text-align: center; }
+    .event-fact-label { color: #9ce5d4; font-size: 9px; font-weight: 800; letter-spacing: .06em; }
+    .event-fact-value { margin-top: 4px; color: var(--white); font-size: 11px; font-weight: 700; line-height: 1.45; word-break: keep-all; }
     .notice {
       margin-top: 18px;
       padding: 14px 15px;
@@ -103,7 +103,7 @@
     .summary-wrap { position: relative; z-index: 2; max-width: 980px; margin: -1px auto 0; padding: 0 14px; }
     .summary {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 1px;
       overflow: hidden;
       border: 1px solid var(--gray-line);
@@ -111,10 +111,10 @@
       background: var(--gray-line);
       box-shadow: var(--shadow);
     }
-    .stat { min-width: 0; padding: 16px 13px; background: var(--white); }
-    .stat.wide { grid-column: span 2; }
-    .stat-label { color: var(--gray-text); font-size: 11px; font-weight: 600; }
-    .stat-value { margin-top: 4px; color: var(--navy); font-size: 25px; font-weight: 800; line-height: 1.1; }
+    .stat { min-width: 0; padding: 12px 3px; background: var(--white); text-align: center; }
+    .stat.wide { grid-column: span 1; }
+    .stat-label { color: var(--gray-text); font-size: 9px; font-weight: 700; white-space: nowrap; }
+    .stat-value { margin-top: 4px; color: var(--navy); font-size: 18px; font-weight: 800; line-height: 1.1; }
     .stat.pending .stat-label, .stat.pending .stat-value { color: var(--red); }
     .stat.total { background: var(--navy); }
     .stat.total .stat-label { color: rgba(255,255,255,.68); }
@@ -235,9 +235,15 @@
 
     @media (min-width: 700px) {
       .hero { padding-bottom: 30px; }
-      .event-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .event-facts { gap: 8px; }
+      .event-fact { padding: 11px 12px; text-align: left; }
+      .event-fact-label { font-size: 10px; }
+      .event-fact-value { font-size: 13px; }
       .summary { grid-template-columns: repeat(5, minmax(0, 1fr)); border-radius: 0 0 18px 18px; }
       .stat.wide { grid-column: span 1; }
+      .stat { padding: 16px 13px; text-align: left; }
+      .stat-label { font-size: 11px; }
+      .stat-value { font-size: 25px; }
       .member-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
       main { padding-top: 14px; }
       .card { padding: 24px; }
@@ -261,11 +267,11 @@
         <div class="sync-status" id="syncStatus">연결 중</div>
       </div>
       <h1>한마음국제의료재단<br>초청 만찬 참석 사전조사</h1>
-      <p class="hero-intro"><strong>하충식 한마음국제의료재단 의장님</strong>께서 부대원과 배우자 최대 26명을 그랜드 머큐어 앰배서더 창원 호텔 뷔페에 초청하셨습니다. 이에 따라 지휘관·참모, 전대 주임원사, 군종장교, 신분별 단체장을 대상으로 참석 가능 여부를 조사합니다.</p>
+      <p class="hero-intro"><strong>하충식 한마음국제의료재단 의장님</strong>께서 <strong>부대원(배우자 포함)</strong>을 <strong>그랜드 머큐어 앰배서더 창원 호텔 뷔페</strong>에 초청하셨습니다. 이에 따라 <strong>지휘관·참모, 전대 주임원사, 군종장교, 신분별 단체장</strong>을 대상으로 참석 가능 여부를 조사합니다.</p>
       <div class="event-facts" aria-label="행사 기본정보">
-        <div class="event-fact"><div class="event-fact-label">일시</div><div class="event-fact-value">2026. 11. 5.(목)<br>18:30~20:00</div></div>
-        <div class="event-fact place"><div class="event-fact-label">장소</div><div class="event-fact-value">그랜드 머큐어 앰배서더 창원<br>호텔 뷔페</div></div>
-        <div class="event-fact"><div class="event-fact-label">이동시간</div><div class="event-fact-value">약 45분<br>(편도 기준)</div></div>
+        <div class="event-fact"><div class="event-fact-label">일시</div><div class="event-fact-value">11. 5.(목)<br>18:30</div></div>
+        <div class="event-fact"><div class="event-fact-label">장소</div><div class="event-fact-value">그랜드 머큐어<br>앰배서더 창원</div></div>
+        <div class="event-fact"><div class="event-fact-label">이동시간</div><div class="event-fact-value">약 45분<br>(편도)</div></div>
       </div>
       <div class="notice">
         <strong>본 조사는 참석 가능 여부를 확인하기 위한 사전조사이며, 참석 인원을 확정하는 절차가 아닙니다.</strong> 조사 결과와 행사장 운영 상황에 따라 최종 참석 대상 및 규모는 조정될 수 있습니다.
@@ -275,11 +281,11 @@
 
   <section class="summary-wrap" aria-label="실시간 조사 현황">
     <div class="summary">
-      <div class="stat pending"><div class="stat-label">미응답 인원</div><div class="stat-value" id="pendingCount">51명</div></div>
+      <div class="stat pending"><div class="stat-label">미응답</div><div class="stat-value" id="pendingCount">51명</div></div>
       <div class="stat"><div class="stat-label">개인참석</div><div class="stat-value" id="personalCount">0명</div></div>
       <div class="stat"><div class="stat-label">부부동반</div><div class="stat-value" id="coupleCount">0명</div></div>
       <div class="stat"><div class="stat-label">참석제한</div><div class="stat-value" id="unavailableCount">0명</div></div>
-      <div class="stat total wide"><div class="stat-label">총 참석 희망인원</div><div class="stat-value" id="totalCount">0명</div></div>
+      <div class="stat total wide"><div class="stat-label">총 희망</div><div class="stat-value" id="totalCount">0명</div></div>
     </div>
   </section>
 
