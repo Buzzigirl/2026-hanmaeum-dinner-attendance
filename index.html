@@ -158,10 +158,13 @@
     .member-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
     .member-btn {
       position: relative;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
       align-items: center;
+      align-content: center;
       justify-content: center;
+      column-gap: 3px;
       height: 47px;
       min-height: 47px;
       overflow: hidden;
@@ -175,10 +178,10 @@
       cursor: pointer;
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
     }
-    .member-name { font-size: 12px; font-weight: 800; line-height: 1.05; }
-    .member-role { display: block; margin-top: 2px; color: var(--gray-text); font-size: 8px; font-weight: 500; line-height: 1; white-space: nowrap; }
+    .member-name { grid-column: 1 / -1; font-size: 12px; font-weight: 800; line-height: 1.05; }
+    .member-role { grid-column: 1; margin-top: 3px; color: var(--gray-text); font-size: 7px; font-weight: 500; line-height: 1; white-space: nowrap; }
     .member-btn:active { transform: scale(.97); }
-    .member-btn::after { content: "미응답"; display: block; margin-top: 2px; color: #a0a8b4; font-size: 8px; font-weight: 600; line-height: 1; }
+    .member-btn::after { content: "미응답"; grid-column: 2; margin-top: 3px; color: #a0a8b4; font-size: 7px; font-weight: 600; line-height: 1; white-space: nowrap; }
     .member-btn.personal { border-color: #8fdbc9; background: var(--mint-light); color: #0d725b; }
     .member-btn.personal::after { content: "개인참석"; color: var(--mint-dark); }
     .member-btn.couple { border-color: #dfc585; background: var(--gold-light); color: #765416; }
@@ -400,7 +403,7 @@
       { id:"hq_13", group:"단본부", name:"최원준", role:"법무실장" },
       { id:"hq_14", group:"단본부", name:"김승욱", role:"항의대대장" },
       { id:"ops_01", group:"항작전대", name:"최우석", role:"항작전대장" },
-      { id:"ops_02", group:"항작전대", name:"서강석", role:"주임원사" },
+      { id:"ops_02", group:"항작전대", name:"서강석", role:"전대주임원사" },
       { id:"ops_03", group:"항작전대", name:"이대원", role:"항작과장" },
       { id:"ops_04", group:"항작전대", name:"좌성호", role:"251대대장" },
       { id:"ops_05", group:"항작전대", name:"김동건", role:"258대대장" },
@@ -409,7 +412,7 @@
       { id:"ops_08", group:"항작전대", name:"박정호", role:"기상대대장" },
       { id:"ops_09", group:"항작전대", name:"김상협", role:"운관대대장" },
       { id:"maint_01", group:"정비전대", name:"황광태", role:"정비전대장" },
-      { id:"maint_02", group:"정비전대", name:"류준호", role:"주임원사" },
+      { id:"maint_02", group:"정비전대", name:"류준호", role:"전대주임원사" },
       { id:"maint_03", group:"정비전대", name:"이인우", role:"정비과장" },
       { id:"maint_04", group:"정비전대", name:"김은광", role:"품질과장" },
       { id:"maint_05", group:"정비전대", name:"최도진", role:"분석과장" },
@@ -417,21 +420,21 @@
       { id:"maint_07", group:"정비전대", name:"허종욱", role:"항공기대대장" },
       { id:"maint_08", group:"정비전대", name:"권혁준", role:"장비대대장" },
       { id:"support_01", group:"지원전대", name:"이관효", role:"작지전대장" },
-      { id:"support_02", group:"지원전대", name:"조현호", role:"주임원사" },
+      { id:"support_02", group:"지원전대", name:"조현호", role:"전대주임원사" },
       { id:"support_03", group:"지원전대", name:"김경탁", role:"작지과장" },
       { id:"support_04", group:"지원전대", name:"김태건", role:"정통대대장" },
       { id:"support_05", group:"지원전대", name:"손동석", role:"수송대대장" },
       { id:"support_06", group:"지원전대", name:"이현석", role:"보급대대장" },
       { id:"support_07", group:"지원전대", name:"김원태", role:"복지대대장" },
       { id:"security_01", group:"방호전대", name:"공만석", role:"방호전대장" },
-      { id:"security_02", group:"방호전대", name:"송가람", role:"주임원사" },
+      { id:"security_02", group:"방호전대", name:"송가람", role:"전대주임원사" },
       { id:"security_03", group:"방호전대", name:"송명도", role:"기작과장" },
       { id:"security_04", group:"방호전대", name:"정혜진", role:"화생방대장" },
       { id:"security_05", group:"방호전대", name:"권선민", role:"공병대대장" },
       { id:"security_06", group:"방호전대", name:"오지영", role:"군경대대장" },
-      { id:"chaplain_01", group:"군종", name:"이정훈", role:"법사" },
-      { id:"chaplain_02", group:"군종", name:"조은상", role:"목사" },
-      { id:"chaplain_03", group:"군종", name:"윤창용", role:"신부" },
+      { id:"chaplain_01", group:"군종", name:"이정훈", role:"법사님" },
+      { id:"chaplain_02", group:"군종", name:"조은상", role:"목사님" },
+      { id:"chaplain_03", group:"군종", name:"윤창용", role:"신부님" },
       { id:"association_01", group:"신분별단체장", name:"갈부강", role:"초급장교단장" },
       { id:"association_02", group:"신분별단체장", name:"서원종", role:"준사관단장" },
       { id:"association_03", group:"신분별단체장", name:"이치훈", role:"군무원단장" },
