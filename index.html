@@ -546,8 +546,6 @@
       const member = selectedItem;
       const choice = selectedChoice;
       const payload = {
-        name: member.name,
-        group: member.group,
         choice,
         headcount: choice === "couple" ? 2 : choice === "personal" ? 1 : 0,
         updatedAt: Date.now()
