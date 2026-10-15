@@ -212,7 +212,6 @@
     .seat.empty::after { content: "빈자리"; }
     .table-block { margin: 6px 2px; height: 48px; border: 2px solid #9c7748; border-radius: 6px; background: linear-gradient(90deg, #d5b480, #e5ca9d 48%, #d5b480); box-shadow: inset 0 0 0 3px rgba(255,255,255,.25); }
     .table-gap { height: 28px; }
-    .layout-caption { margin-top: 12px; color: #78674c; font-size: 11px; text-align: center; }
 
     .sheet-backdrop { position: fixed; inset: 0; z-index: 50; display: none; align-items: flex-end; justify-content: center; background: rgba(10,18,32,.54); padding: 14px; }
     .sheet-backdrop.open { display: flex; }
@@ -336,9 +335,8 @@
       <div class="card">
         <div class="section-kicker">SEATING PLAN</div>
         <h2>만찬 배치도</h2>
-        <p class="section-desc">총 28석 기준의 배치 초안입니다.</p>
         <div class="seat-note">현재는 주요 참석자 4석만 표시했습니다. 최종 참석자가 결정되면 빈자리에 명단을 반영합니다.</div>
-        <div class="banquet-layout" aria-label="위아래 테이블 2개, 각 테이블 14석 배치도">
+        <div class="banquet-layout" aria-label="위아래 테이블 2개 배치도">
           <div class="seat-row">
             <div class="seat empty"></div><div class="seat empty"></div><div class="seat vip">의장</div><div class="seat vip">이사장</div><div class="seat empty"></div><div class="seat empty"></div><div class="seat empty"></div>
           </div>
@@ -354,7 +352,6 @@
           <div class="seat-row">
             <div class="seat empty"></div><div class="seat empty"></div><div class="seat empty"></div><div class="seat empty"></div><div class="seat empty"></div><div class="seat empty"></div><div class="seat empty"></div>
           </div>
-          <div class="layout-caption">위 테이블 14석 · 아래 테이블 14석</div>
         </div>
       </div>
     </section>
