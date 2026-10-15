@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#172642">
-  <meta name="description" content="2026년 창원한마음병원 초청 만찬 참석 희망 조사">
-  <title>2026년 창원한마음병원 초청 만찬 참석 희망 조사</title>
+  <meta name="description" content="2026년 한마음국제의료재단 초청 만찬 참석 사전조사">
+  <title>2026년 한마음국제의료재단 초청 만찬 참석 사전조사</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -82,8 +82,12 @@
     .sync-status.online { color: #85e0c8; }
     .sync-status.offline, .sync-status.error { color: #ffaaa3; }
     h1 { margin: 18px 0 8px; font-size: clamp(27px, 6.8vw, 44px); line-height: 1.28; letter-spacing: -.04em; }
-    .hero-meta { margin: 0; color: rgba(255,255,255,.78); font-size: 14px; line-height: 1.8; }
-    .hero-meta strong { color: var(--white); }
+    .hero-intro { margin: 0; color: rgba(255,255,255,.82); font-size: 14px; line-height: 1.75; }
+    .hero-intro strong { color: var(--white); }
+    .event-facts { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 17px; }
+    .event-fact { padding: 11px 12px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(255,255,255,.07); }
+    .event-fact-label { color: #9ce5d4; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+    .event-fact-value { margin-top: 4px; color: var(--white); font-size: 13px; font-weight: 700; line-height: 1.45; }
     .notice {
       margin-top: 18px;
       padding: 14px 15px;
@@ -231,6 +235,7 @@
 
     @media (min-width: 700px) {
       .hero { padding-bottom: 30px; }
+      .event-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .summary { grid-template-columns: repeat(5, minmax(0, 1fr)); border-radius: 0 0 18px 18px; }
       .stat.wide { grid-column: span 1; }
       .member-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
@@ -255,10 +260,15 @@
         <div class="eyebrow">2026 INVITATION DINNER</div>
         <div class="sync-status" id="syncStatus">연결 중</div>
       </div>
-      <h1>창원한마음병원<br>초청 만찬 참석 희망 조사</h1>
-      <p class="hero-meta"><strong>11. 5.(목) 18:30</strong> · 창원한마음병원 지하 3층 행사장</p>
+      <h1>한마음국제의료재단<br>초청 만찬 참석 사전조사</h1>
+      <p class="hero-intro"><strong>하충식 한마음국제의료재단 의장님</strong>께서 부대원과 배우자 최대 26명을 그랜드 머큐어 앰배서더 창원 호텔 뷔페에 초청하셨습니다. 이에 따라 지휘관·참모, 전대 주임원사, 군종장교, 신분별 단체장을 대상으로 참석 가능 여부를 조사합니다.</p>
+      <div class="event-facts" aria-label="행사 기본정보">
+        <div class="event-fact"><div class="event-fact-label">일시</div><div class="event-fact-value">2026. 11. 5.(목)<br>18:30~20:00</div></div>
+        <div class="event-fact place"><div class="event-fact-label">장소</div><div class="event-fact-value">그랜드 머큐어 앰배서더 창원<br>호텔 뷔페</div></div>
+        <div class="event-fact"><div class="event-fact-label">이동시간</div><div class="event-fact-value">약 45분<br>(편도 기준)</div></div>
+      </div>
       <div class="notice">
-        본 조사는 참석 희망 여부를 파악하기 위한 사전조사입니다. <strong>조사 결과 및 행사장 운영 상황에 따라 최종 참석 대상과 참석 인원은 조정될 수 있으며, 현재 응답은 최종 참석 확정을 의미하지 않습니다.</strong>
+        <strong>본 조사는 참석 가능 여부를 확인하기 위한 사전조사이며, 참석 인원을 확정하는 절차가 아닙니다.</strong> 조사 결과와 행사장 운영 상황에 따라 최종 참석 대상 및 규모는 조정될 수 있습니다.
       </div>
     </div>
   </header>
@@ -308,8 +318,8 @@
           <div class="schedule-item"><div class="schedule-time">16:25<br>~16:40</div><div class="schedule-dot"></div><div class="schedule-body"><div class="schedule-title">해성관 주차장 대기</div><div class="schedule-note">탑승 인원 확인 및 출발 준비</div></div></div>
           <div class="schedule-item"><div class="schedule-time">16:45<br>~17:00</div><div class="schedule-dot"></div><div class="schedule-body"><div class="schedule-title">관사지역 대기</div><div class="schedule-note">탑승 인원 확인</div></div></div>
           <div class="schedule-item"><div class="schedule-time">17:00</div><div class="schedule-dot"></div><div class="schedule-body"><div class="schedule-title">부대 출발</div><div class="schedule-note">부대버스 1대 운용 예정</div></div></div>
-          <div class="schedule-item"><div class="schedule-time">18:00<br>~18:30</div><div class="schedule-dot"></div><div class="schedule-body"><div class="schedule-title">행사장 도착</div><div class="schedule-note">창원한마음병원 지하 3층 행사장</div></div></div>
-          <div class="schedule-item event"><div class="schedule-time">18:30<br>~20:00</div><div class="schedule-dot"></div><div class="schedule-body"><div class="schedule-title">초청 만찬 진행</div><div class="schedule-note">코스요리</div></div></div>
+          <div class="schedule-item"><div class="schedule-time">18:00<br>~18:30</div><div class="schedule-dot"></div><div class="schedule-body"><div class="schedule-title">행사장 도착</div><div class="schedule-note">그랜드 머큐어 앰배서더 창원 호텔</div></div></div>
+          <div class="schedule-item event"><div class="schedule-time">18:30<br>~20:00</div><div class="schedule-dot"></div><div class="schedule-body"><div class="schedule-title">초청 만찬 진행</div><div class="schedule-note">호텔 뷔페</div></div></div>
           <div class="schedule-item"><div class="schedule-time">20:00</div><div class="schedule-dot"></div><div class="schedule-body"><div class="schedule-title">행사 종료 및 복귀</div></div></div>
           <div class="schedule-item"><div class="schedule-time">21:00</div><div class="schedule-dot"></div><div class="schedule-body"><div class="schedule-title">부대 도착</div></div></div>
         </div>
