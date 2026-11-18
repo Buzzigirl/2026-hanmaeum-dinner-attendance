@@ -73,6 +73,30 @@
       "$other": {
         ".validate": false
       }
+    },
+    "2026_hanmaeum_dinner_1211_shared": {
+      ".read": true,
+      "responses": {
+        "$personId": {
+          ".write": "$personId.matches(/^(yoon_changho|choi_younghyun|lee_doheon|cho_hyunho|ryu_junho|seo_kangseok|song_garam|cheon_jeonghwan)$/) && newData.exists()",
+          ".validate": "newData.hasChildren(['choice', 'headcount', 'updatedAt'])",
+          "choice": {
+            ".validate": "newData.val() == 'personal' || newData.val() == 'couple' || newData.val() == 'unavailable'"
+          },
+          "headcount": {
+            ".validate": "newData.isNumber() && ((newData.parent().child('choice').val() == 'personal' && newData.val() == 1) || (newData.parent().child('choice').val() == 'couple' && newData.val() == 2) || (newData.parent().child('choice').val() == 'unavailable' && newData.val() == 0))"
+          },
+          "updatedAt": {
+            ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+          },
+          "$other": {
+            ".validate": false
+          }
+        }
+      },
+      "$other": {
+        ".validate": false
+      }
     }
   }
 }
