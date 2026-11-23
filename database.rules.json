@@ -151,9 +151,12 @@
       "updates": {
         "$updateId": {
           ".write": "$updateId.matches(/^-?[A-Za-z0-9_]{1,100}$/) && newData.exists()",
-          ".validate": "newData.hasChildren(['text', 'status', 'createdAt', 'updatedAt'])",
+          ".validate": "newData.hasChildren(['text', 'signature', 'status', 'createdAt', 'updatedAt'])",
           "text": {
             ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 2000"
+          },
+          "signature": {
+            ".validate": "newData.isString() && newData.val().matches(/^[a-f0-9]{64}$/)"
           },
           "status": {
             ".validate": "newData.isString() && newData.val().matches(/^(pending|processing|processed|needs_info|error)$/)"
