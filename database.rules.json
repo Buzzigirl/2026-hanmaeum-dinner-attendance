@@ -148,15 +148,48 @@
           }
         }
       },
+      "deviceRequests": {
+        "$deviceId": {
+          ".write": "$deviceId.matches(/^[a-f0-9]{32}$/) && !data.exists() && newData.child('status').val() == 'pending'",
+          ".validate": "newData.hasChildren(['publicKey', 'status', 'createdAt', 'updatedAt'])",
+          "publicKey": {
+            ".validate": "newData.isString() && newData.val().length >= 100 && newData.val().length <= 200"
+          },
+          "status": {
+            ".validate": "newData.isString() && newData.val().matches(/^(pending|approved|rejected)$/)"
+          },
+          "createdAt": {
+            ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+          },
+          "updatedAt": {
+            ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+          }
+        }
+      },
+      "deviceApprovals": {
+        ".write": false,
+        "$deviceId": {
+          ".validate": "$deviceId.matches(/^[a-f0-9]{32}$/) && newData.hasChildren(['approved', 'approvedAt'])",
+          "approved": {
+            ".validate": "newData.isBoolean() && newData.val() == true"
+          },
+          "approvedAt": {
+            ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+          }
+        }
+      },
       "updates": {
         "$updateId": {
           ".write": "$updateId.matches(/^-?[A-Za-z0-9_]{1,100}$/) && newData.exists()",
-          ".validate": "newData.hasChildren(['text', 'signature', 'status', 'createdAt', 'updatedAt'])",
+          ".validate": "newData.hasChildren(['text', 'deviceId', 'signature', 'status', 'createdAt', 'updatedAt'])",
           "text": {
             ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 2000"
           },
+          "deviceId": {
+            ".validate": "newData.isString() && newData.val().matches(/^[a-f0-9]{32}$/)"
+          },
           "signature": {
-            ".validate": "newData.isString() && newData.val().matches(/^[a-f0-9]{64}$/)"
+            ".validate": "newData.isString() && newData.val().length >= 80 && newData.val().length <= 120"
           },
           "status": {
             ".validate": "newData.isString() && newData.val().matches(/^(pending|processing|processed|needs_info|error)$/)"
