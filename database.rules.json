@@ -148,6 +148,36 @@
           }
         }
       },
+      "messages": {
+        "$messageId": {
+          ".write": "$messageId.matches(/^[a-f0-9]{64}$/) && newData.exists()",
+          ".validate": "newData.hasChildren(['fingerprint', 'source', 'text', 'status', 'sourceRowId', 'createdAt', 'updatedAt'])",
+          "fingerprint": {
+            ".validate": "newData.isString() && newData.val() == $messageId"
+          },
+          "source": {
+            ".validate": "newData.isString() && newData.val().matches(/^(shinhan|hyundai|samsung|kbank)$/)"
+          },
+          "text": {
+            ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 2000"
+          },
+          "status": {
+            ".validate": "newData.isString() && newData.val().matches(/^(processed|needs_info)$/)"
+          },
+          "sourceRowId": {
+            ".validate": "newData.isNumber() && newData.val() > 0"
+          },
+          "createdAt": {
+            ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+          },
+          "updatedAt": {
+            ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+          },
+          "$other": {
+            ".validate": false
+          }
+        }
+      },
       "deviceRequests": {
         "$deviceId": {
           ".write": "$deviceId.matches(/^[a-f0-9]{32}$/) && !data.exists() && newData.child('status').val() == 'pending'",
