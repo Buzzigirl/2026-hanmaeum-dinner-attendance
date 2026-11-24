@@ -211,7 +211,7 @@
       "updates": {
         "$updateId": {
           ".write": "$updateId.matches(/^-?[A-Za-z0-9_]{1,100}$/) && newData.exists()",
-          ".validate": "newData.hasChildren(['text', 'deviceId', 'signature', 'status', 'createdAt', 'updatedAt'])",
+          ".validate": "newData.hasChildren(['text', 'status', 'createdAt', 'updatedAt'])",
           "text": {
             ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 2000"
           },
